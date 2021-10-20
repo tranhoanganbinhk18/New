@@ -1,0 +1,38 @@
+gg.handlerlist=mongodb
+gg.handler.mongodb.type=mongodb
+
+#The following handler properties are optional. 
+#Please refer to the Oracle GoldenGate for BigData documentation
+#for details about the configuration.
+#gg.handler.mongodb.clientURI=mongodb://localhost:27017/
+#gg.handler.mongodb.Host=<MongoDBServer address>
+#gg.handler.mongodb.Port=<MongoDBServer port>
+#gg.handler.mongodb.WriteConcern={ w: <value>, wtimeout: <number> }
+#gg.handler.mongodb.AuthenticationMechanism=GSSAPI,MONGODB_CR,MONGODB_X509,PLAIN,SCRAM_SHA_1
+#gg.handler.mongodb.UserName=<Authentication username>
+#gg.handler.mongodb.Password=<Authentication password>
+#gg.handler.mongodb.Source=<Authentication source>
+#gg.handler.mongodb.ServerAddressList=localhost1:27017,localhost2:27018,localhost3:27019,...
+#gg.handler.mongodb.BulkWrite=<false|true>
+#gg.handler.mongodb.CheckMaxRowSizeLimit=<true|false>
+
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+
+#Path to MongoDB Java driver.
+# maven co-ordinates
+#        <dependency>
+#            <groupId>org.mongodb</groupId>
+#            <artifactId>mongo-java-driver</artifactId>
+#            <version>3.2.2</version>
+#        </dependency>
+gg.classpath=/path/to/mongodb/java/driver/mongo-java-driver-3.2.2.jar
+
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

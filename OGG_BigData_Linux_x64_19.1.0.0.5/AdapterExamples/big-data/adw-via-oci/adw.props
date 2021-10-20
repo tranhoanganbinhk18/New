@@ -1,0 +1,36 @@
+# Configuration to load GoldenGate trail operation records 
+# into Autonomous Data Warehouse (ADW) by chaining
+# File writer handler -> OCI Event handler -> ADW Event handler.
+# Note: Recommended to only edit the configuration marked as TODO
+
+gg.target=adw
+
+## The OCI Event handler
+#TODO: Edit the OCI Config file path
+gg.eventhandler.oci.configFilePath=./oci/config
+#TODO: Edit the OCI profile
+gg.eventhandler.oci.profile=<oci-profile>
+#TODO: Edit the OCI namespace
+gg.eventhandler.oci.namespace=<oci-namespace>
+#TODO: Edit the OCI region
+gg.eventhandler.oci.region=<oci-region>
+#TODO: Edit the OCI compartment OCID
+gg.eventhandler.oci.compartmentID=<oci-compartment-ocid>
+#TODO: Edit the OCI bucket name
+gg.eventhandler.oci.bucketMappingTemplate=<oci-bucket-name>
+
+## The ADW Event Handler
+#TODO: Edit the ADW JDBC Connection URL including the location of wallet (TNS_ADMIN)
+gg.eventhandler.adw.connectionURL=jdbc:oracle:thin:@adw20190410ns_medium?TNS_ADMIN=/path/to/adw/wallet
+#TODO: Edit the db user
+gg.eventhandler.adw.UserName=<db-user>
+#TODO: Edit the db password
+gg.eventhandler.adw.Password=<db-password>
+#TODO: Edit the name of the pre-existing credential in ADW to access OCI object store.
+gg.eventhandler.adw.objectStoreCredential=<adw-credential-to-access-oci-objectstore>
+
+#TODO: Edit to include the OCI Java SDK.
+gg.classpath=./oci-java-sdk/lib/*:./oci-java-sdk/third-party/lib/*
+#TODO: Edit to provide sufficient memory (at least 8GB).
+jvm.bootoptions=-Xmx8g -Xms8g
+gg.log=log4j

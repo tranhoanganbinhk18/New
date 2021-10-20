@@ -1,0 +1,22 @@
+#Configuration to use Oracle branded Datadirect JDBC driver.
+
+gg.handlerlist=jdbcwriter
+gg.handler.jdbcwriter.type=jdbc
+
+##Handler properties for Greenplum database target.
+gg.handler.jdbcwriter.DriverClass=weblogic.jdbc.greenplum.GreenplumDriver
+gg.handler.jdbcwriter.connectionURL=jdbc:weblogic:greenplum://hostname:[port] [;property=value[;...]]
+#Example: jdbc:weblogic:greenplum://corpserver1:5432;DatabaseName=ACCTNG";
+gg.handler.jdbcwriter.userName=<dbuser>
+gg.handler.jdbcwriter.password=<dbpassword>
+#Contact Oracle support to get the fmwgenerictoken*.jar and wlgreenplum*.jar files.
+gg.classpath=/path/to/fmwgenerictoken-5.1.4-170525.2154.0181.jar:/path/to/wlgreenplum-5.1.4-170525.2154.0181.jar
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

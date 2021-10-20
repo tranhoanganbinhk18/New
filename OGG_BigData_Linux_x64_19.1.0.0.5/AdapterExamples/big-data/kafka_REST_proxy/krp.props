@@ -1,0 +1,51 @@
+gg.handlerlist=kafkarestproxy
+
+#The handler properties
+gg.handler.kafkarestproxy.type=kafkarestproxy
+#The following selects the topic name based on the fully qualified table name
+gg.handler.kafkarestproxy.topicMappingTemplate=${fullyQualifiedTableName}
+#The following selects the message key using the concatenated primary keys
+gg.handler.kafkarestproxy.keyMappingTemplate=${primaryKeys}
+
+gg.handler.kafkarestproxy.postDataUrl=http://localhost:8083
+gg.handler.kafkarestproxy.apiVersion=v1
+gg.handler.kafkarestproxy.format=json
+gg.handler.kafkarestproxy.payloadsize=1
+gg.handler.kafkarestproxy.mode=tx
+
+#Server auth properties
+#gg.handler.kafkarestproxy.trustStore=/keys/truststore.jks
+#gg.handler.kafkarestproxy.trustStorePassword=test1234
+#Client auth properites
+#gg.handler.kafkarestproxy.keyStore=/keys/keystore.jks
+#gg.handler.kafkarestproxy.keyStorePassword=test1234
+
+#Proxy properties
+#gg.handler.kafkarestproxy.proxy=http://proxyurl:80
+#gg.handler.kafkarestproxy.proxyUserName=sabbabu
+#gg.handler.kafkarestproxy.proxyPassword=test1234
+
+
+#The formatter properties
+gg.handler.kafkarestproxy.format.metaColumnsTemplate=${optype}
+gg.handler.kafkarestproxy.format.insertOpKey=I
+gg.handler.kafkarestproxy.format.updateOpKey=U
+gg.handler.kafkarestproxy.format.deleteOpKey=D
+gg.handler.kafkarestproxy.format.truncateOpKey=T
+gg.handler.kafkarestproxy.format.iso8601Format=false
+#gg.handler.kafkarestproxy.format.pkUpdateHandling=update
+goldengate.userexit.timestamp=utc
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+#Set the classpath here
+gg.classpath={path of jersey client jars}
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

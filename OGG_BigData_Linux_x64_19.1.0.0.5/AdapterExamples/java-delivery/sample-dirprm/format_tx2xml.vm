@@ -1,0 +1,5 @@
+<tx ts='$tx.endTime' numOps='$tx.getNumOps()' startPos='$startpos' endPos='$endpos'>
+#foreach( $op in $tx )
+#parse ( "format_op2xml.vm" )
+#end
+</tx>

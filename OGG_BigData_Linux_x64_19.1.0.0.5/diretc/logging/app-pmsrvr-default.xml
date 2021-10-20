@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   p m s r v r . x m l                                         -|
+   !-                                                               -|
+   !-   Logging control file for PM Server                          -|
+   \- ============================================================= -/
+  ! -->
+
+  <logger          name="ggMonitoring">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="warn"/>
+  </logger>
+  <logger          name="PMRequestHandler">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="warn"/>
+  </logger>
+  <logger          name="PMLegacyHandler">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="warn"/>
+  </logger>
+  <logger          name="pmsrvr.mpoint.collector">
+    <level        value="warn"/>
+  </logger>
+  <logger          name="pmsrvr.handlers.Commands">
+    <level        value="warn"/>
+  </logger>
+  <logger          name="ggrepo.bdb">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="warn"/>
+  </logger>
+  <logger          name="ggrepo.lmdb">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="warn"/>
+  </logger>
+  <logger          name="ggrepo.udp">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="warn"/>
+  </logger>
+
+</configuration>

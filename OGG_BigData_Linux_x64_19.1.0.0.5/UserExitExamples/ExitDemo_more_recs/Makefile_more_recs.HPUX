@@ -1,0 +1,78 @@
+#-------------------------------------------------------------------#
+# Copyright (c) 1995, 2013, Oracle and/or its affiliates. All rights reserved. 
+#                                                                   #
+#   Makefile For HP-UX                                              #
+#                                                                   #
+#   Usage:                                                          #
+#       make                                                        #
+#                                                                   #
+#   Description:                                                    #
+#       The module can be built for Sybase, Oracle, DB2 databases   #
+#-------------------------------------------------------------------#
+
+#-------------------------------------------------------------------#
+#   VARIABLES:                                                      #
+#          DBINCLUDEDIR  : The database install directory path      #
+#          USERINCLUDES  : User include directives.                 #
+#          MODULENAME    : Which module need to be built.           #
+#          CC            : Compiler name.                           #
+#          CFLAGS        : Compiler Flags to prepare object file.   #
+#          LDFLAGS       : Compiler Flags to prepare shared Lib.    #
+#-------------------------------------------------------------------#
+
+CC = gcc
+CFLAGS = -c
+LDFLAGS = -shared
+MODULENAME = exitdemo_more_recs
+SRCFILE = $(MODULENAME).c
+OBJFILE = $(MODULENAME).o
+LIBFILE = $(MODULENAME).so
+
+ifdef DBENV
+#-------------------------------------------------------------------#
+#   Sybase                                                          #
+#-------------------------------------------------------------------#
+  ifneq "" "$(findstring Sybase,$(DBENV))"
+    DBINCLUDEDIR = "$(SYBASE)/$(SYBASE_OCS)/include/"
+    DBFLAGS = -DSYBASE
+  endif
+
+#-------------------------------------------------------------------#
+#   Oracle                                                          #
+#-------------------------------------------------------------------#
+  ifneq "" "$(findstring Oracle,$(DBENV))"
+    DBINCLUDEDIR = "$(ORACLE_HOME)/rdbms/public"
+    DBFLAGS = -DORACLE
+  endif
+
+#-------------------------------------------------------------------#
+#   DB2                                                             #
+#-------------------------------------------------------------------#
+  ifneq "" "$(findstring DB2,$(DBENV))"
+    DBINCLUDEDIR = "$(VWSPATH)/include"
+    DBFLAGS = -DDB2
+  endif
+
+else
+
+#-------------------------------------------------------------------#
+# NOTE: Please set the DBINCLUDEDIR variable value appropriately as #
+#       Makefile does not have the required variables set.          #
+#-------------------------------------------------------------------#
+    DBINCLUDEDIR = "/rdbms/"
+endif
+
+#-------------------------------------------------------------------#
+# Actual compilation and shared library build                       #
+#-------------------------------------------------------------------#
+
+USERINCLUDES = -I../../
+
+$(LIBFILE):$(OBJFILE)
+	$(CC) $(LDFLAGS) $(OBJFILE) -o $(LIBFILE)
+
+$(OBJFILE):$(SRCFILE)
+	$(CC) $(CFLAGS) -I$(DBINCLUDEDIR) $(USERINCLUDES) $(DBFLAGS) $(SRCFILE) -o $(OBJFILE)
+
+clean:
+	rm -f $(OBJFILE) $(LIBFILE)

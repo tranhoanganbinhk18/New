@@ -1,0 +1,32 @@
+
+gg.handlerlist=hdfs
+
+#Handler Properties
+gg.handler.hdfs.type=hdfs
+gg.handler.hdfs.rootFilePath=/gg/hdfs/hivemdp4
+gg.handler.hdfs.format=delimitedtext
+gg.handler.hdfs.format.includeColumnNames=true
+gg.handler.hdfs.includeTokens=false
+
+gg.handler.hdfs.mode=tx
+
+
+#Hive Metadata Provider Properties
+gg.mdp.type=hive
+gg.mdp.connectionUrl=jdbc:hive2://10.240.118.56:10000/gg_hive
+gg.mdp.driverClassName=org.apache.hive.jdbc.HiveDriver
+
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+gg.classpath=dirprm/:/var/lib/hadoop/share/hadoop/common/*:/var/lib/hadoop/share/hadoop/common/lib/*:/var/lib/hadoop/share/hadoop/hdfs/*:/var/lib/hadoop/etc/hadoop/:/var/lib/hadoop/share/hadoop/mapreduce/*:/var/lib/hive/lib/*:/var/lib/hive/hcatalog/share/hcatalog/*:/var/lib/hive/hcatalog/share/webhcat/java-client/*:
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar
+

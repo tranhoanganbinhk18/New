@@ -1,0 +1,41 @@
+gg.handlerlist=nosql
+
+gg.handler.nosql.type=nosql
+gg.handler.nosql.nosqlStore=kvstore
+gg.handler.nosql.nosqlURL=localhost:5000
+gg.handler.nosql.ddlHandling=CREATE,ADD,DROP
+gg.handler.nosql.interactiveMode=true
+gg.handler.nosql.authType=basic
+
+#Athentication per a Security Properties File
+gg.handler.nosql.securityPropertiesFile=/your/path/kvroot/security/user.security
+
+#Athentication per Credentials and a Public Trust File
+#gg.handler.nosql.publicTrustFile=/your/path/kvroot/security/client.trust
+#gg.handler.nosql.username=your_username
+#gg.handler.nosql.password=your_password
+
+#Authentication per Kerberos and a Public Trust File
+#gg.handler.nosql.publicTrustFile=/your/path/kvroot/security/client.trust
+#gg.handler.nosql.kerberosPrincipal=your_principal
+#gg.handler.nosql.KerberosRealm=your_realm
+#gg.handler.nosql.kerberosKeytabFile=/your/path/to/keytab/file/keytabfile
+
+
+gg.handler.nosql.mode=op
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+
+# Set the classpath here to the Oracle NoSQL client jars (4.5.12 latest)
+# Link to the Oracle NoSQL database website
+# http://www.oracle.com/technetwork/database/database-technologies/nosqldb/downloads/index.html
+
+gg.classpath =/path/kv-4.5.12/lib/*
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar

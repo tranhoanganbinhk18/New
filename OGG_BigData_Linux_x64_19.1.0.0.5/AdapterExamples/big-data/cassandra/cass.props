@@ -1,0 +1,31 @@
+
+gg.handlerlist=cassandra
+
+#The handler properties
+gg.handler.cassandra.type=cassandra
+gg.handler.cassandra.mode=op
+gg.handler.cassandra.contactPoints=localhost
+gg.handler.cassandra.ddlHandling=CREATE,ADD,DROP
+gg.handler.cassandra.compressedUpdates=true
+gg.handler.cassandra.cassandraMode=async
+gg.handler.cassandra.consistencyLevel=ONE
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+#Set the classpath here to the Datastax Cassandra Java Driver (3.1 latest)
+#Link to the Cassandra drivers website
+#http://cassandra.apache.org/doc/latest/getting_started/drivers.html#java
+#Link to the Datastax Cassandra Java Driver
+#https://github.com/datastax/java-driver
+gg.classpath=/path/cassandra/client/jars/*
+
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

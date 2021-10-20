@@ -1,0 +1,11 @@
+{"namespace": "GG_AVRO",
+"type": "record",
+"name": "TCUSTMER_AVRO",
+"fields": [
+     {"name": "CUST_CODE2",  "type": "string", "primary_key":true},   
+     {"name": "NAME", "type": "string"},
+     {"name": "CITY2", "type": "string"},     
+     {"name": "STATE", "type": ["string","null"]}
+]
+}
+

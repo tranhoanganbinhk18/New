@@ -1,0 +1,39 @@
+#-------------------------------------------------------------------#
+# Copyright (c) 1995, 2013, Oracle and/or its affiliates. All rights reserved. 
+#                                                                   #
+#   Makefile For HP OSS                                             #
+#                                                                   #
+#   Usage:                                                          #
+#       make                                                        #
+#                                                                   #
+#   Description:                                                    #
+#       The module can be built for all databases                   #
+#-------------------------------------------------------------------#
+
+#-------------------------------------------------------------------#
+#   VARIABLES:                                                      #
+#          USERINCLUDES  : User include directives.                 #
+#          MODULENAME    : Which module need to be built.           #
+#          CC            : Compiler name.                           #
+#          CFLAGS        : Compiler Flags to prepare object file.   #
+#          LDFLAGS       : Compiler Flags to prepare shared Lib.    #
+#-------------------------------------------------------------------#
+
+CC = c89
+CFLAGS = -g -Wextensions -Wshared -lrld -Wverbose
+LDFLAGS = "-Weld=-set rld_unresolved warn -ul -bsemi_globalized -unres_symbols warn"
+MODULENAME = exitdemo
+SRCFILE = $(MODULENAME).c
+LIBFILE = $(MODULENAME).dll
+
+#-------------------------------------------------------------------#
+# Actual compilation and shared library build                       #
+#-------------------------------------------------------------------#
+
+USERINCLUDES = -I../../
+
+$(LIBFILE):$(SRCFILE)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(USERINCLUDES) $(SRCFILE) -o $(LIBFILE)
+
+clean:
+	rm -f $(LIBFILE)

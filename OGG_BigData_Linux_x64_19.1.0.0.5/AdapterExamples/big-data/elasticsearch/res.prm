@@ -1,0 +1,11 @@
+REPLICAT res
+-- Trail file for this example is located in "AdapterExamples/trail" directory
+-- Command to add REPLICAT
+-- add replicat res, exttrail AdapterExamples/trail/tr
+TARGETDB LIBFILE libggjava.so SET property=dirprm/elasticsearch2x.props
+--TARGETDB LIBFILE libggjava.so SET property=dirprm/elasticsearch5x.props
+--TARGETDB LIBFILE libggjava.so SET property=dirprm/elasticsearch6x.props
+REPORTCOUNT EVERY 1 MINUTES, RATE
+GROUPTRANSOPS 1000
+MAP QASOURCE.*, TARGET QASOURCE.*;
+

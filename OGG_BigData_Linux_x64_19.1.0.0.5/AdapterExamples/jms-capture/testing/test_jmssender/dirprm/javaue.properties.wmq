@@ -1,0 +1,60 @@
+# the handlerlist defines active event handlers
+gg.handlerlist=jmsA
+
+## jndi => WebSphere MQ
+gg.classpath=/home/mnielsen/opt/lib/webspheremq/*
+
+gg.handler.jmsA.type=jms_text
+gg.handler.jmsA.destination=sampleQ
+gg.handler.jmsA.connectionFactory=CF1
+gg.handler.jmsA.format=test.vm
+gg.handler.jmsA.user=goldengate
+gg.handler.jmsA.password=<password>
+
+java.naming.provider.url=file:///path/to/jndi/
+java.naming.factory.initial=com.sun.jndi.fscontext.RefFSContextFactory
+#java.naming.security.principal=goldengate
+#java.naming.security.credentials=foobar
+
+gg.tokens=none
+gg.checkpoint=java
+
+###############################################################
+# configure the C-User-Exit (native library)
+###############################################################
+
+# Duplicates-checkpoint-file prefix. Set nochkpt=TRUE to *disable*.
+goldengate.userexit.chkptprefix=JAVAUE_
+goldengate.userexit.nochkpt=TRUE
+
+###############################################################
+# C-user-exit logging config (for native library *only*).
+# Java app uses log4j config in javawriter.bootoptions.
+
+goldengate.log.modules=UEUTIL,GENUSEREXIT,LOGMALLOC,TXSTORE,UTILS,JAVAWRITER
+goldengate.log.level=INFO
+#goldengate.log.level=DEBUG
+goldengate.log.level.LOGMALLOC=ERROR
+goldengate.log.tostdout=false
+goldengate.log.tofile=true
+
+# prefix for logfile name
+goldengate.log.logname=cuserexit
+
+###############################################################
+goldengate.userexit.writers=javawriter
+
+###############################################################
+# statistics, minimum number of {records, seconds} before generating a report
+javawriter.stats.time=600
+javawriter.stats.numrecs=100
+#javawriter.stats.numrecs=10
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+###############################################################
+#javawriter.bootoptions=-Dgg.home=. -Djava.class.path=javaue/ggue.jar -Dlog4j.configuration=debug-log4j.properties
+#javawriter.bootoptions=-Djava.class.path=javaue/ggue.jar -Dlog4j.debug=true -Dlog4j.configuration=my-log4j.properties
+javawriter.bootoptions=-Djava.class.path=javaue/ggue.jar:../dirprm:/home/mnielsen/opt/activemq51/activemq-all-5.1.0.jar -Dlog4j.configuration=log4j.propertitets
+
+

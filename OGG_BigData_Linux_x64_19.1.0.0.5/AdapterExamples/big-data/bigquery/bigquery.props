@@ -1,0 +1,34 @@
+gg.handlerlist=bigquery
+
+gg.handler.bigquery.type=bigquery
+gg.handler.bigquery.projectId=<project-id>
+gg.handler.bigquery.datasetId=<dataset-id>
+gg.handler.bigquery.credentialsFile=/path/key.json
+gg.handler.bigquery.connectionTimeout=20000
+gg.handler.bigquery.readTimeout=30000
+gg.handler.bigquery.pkUpdateHandling=delete-insert
+
+# If audit log mode is set to true, specify the metacolumns template as well
+gg.handler.bigquery.auditLogMode=false
+gg.handler.bigquery.metaColumnsTemplate=${optype},${position}
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+
+# Set the classpath here to the BigQuery Java Client driver 
+# Link to the Google BigQuery Client Library website
+# https://developers.google.com/api-client-library/java/apis/bigquery/v2
+# Download the other required jars from Maven Central website
+# http://search.maven.org/
+
+gg.classpath=/path/bigquery/libs/*:/path/bigquery/*:/path_to_downloaded_jars/*
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar
+
+
+

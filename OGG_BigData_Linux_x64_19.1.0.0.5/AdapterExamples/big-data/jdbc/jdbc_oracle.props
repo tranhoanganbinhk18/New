@@ -1,0 +1,18 @@
+gg.handlerlist=jdbcwriter
+gg.handler.jdbcwriter.type=jdbc
+
+#Handler properties for Oracle database target
+gg.handler.jdbcwriter.DriverClass=oracle.jdbc.driver.OracleDriver
+gg.handler.jdbcwriter.connectionURL=jdbc:oracle:thin:@<DBServer address>:1521:<database name>
+gg.handler.jdbcwriter.userName=<dbuser>
+gg.handler.jdbcwriter.password=<dbpassword>
+gg.classpath=/path/to/oracle/jdbc/driver/ojdbc5.jar
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

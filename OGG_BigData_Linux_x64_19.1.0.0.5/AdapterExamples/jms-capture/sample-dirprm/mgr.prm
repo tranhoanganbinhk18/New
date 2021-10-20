@@ -1,0 +1,11 @@
+
+--  Unix: set library path to find libjvm.so (and dependent libraries, e.g., libsig.so)
+--    by setting LD_LIBRARY_PATH (Linux/Solaris), LIBPATH (AIX), SHLIB_PATH (HP-UX), etc.
+--  Windows: set the PATH to find jvm.dll
+
+Port 7801
+
+
+-- AutoRestart Extract e_jms,  Retries 2, WaitMinutes 1, ResetMinutes 240
+-- AutoRestart Extract javaue, Retries 2, WaitMinutes 1, ResetMinutes 240
+

@@ -1,0 +1,430 @@
+{
+    "$schema": "internal:loggerRegistry",
+    "loggers": [
+        {
+            "logger": "adminsrvr",
+            "brief": "Top-level logger for Administration Server application events",
+            "children": [
+                {
+                    "logger": "ModuleBase",
+                    "brief": "Internal module definitions for Administration Server",
+                    "type": "internal"
+                },
+                {
+                    "logger": "MonitoringTask",
+                    "brief": "Events related to Performance Metrics for Administration Server"
+                },
+                {
+                    "logger": "session",
+                    "brief": "Database session events"
+                },
+                {
+                    "logger": "TaskManager",
+                    "brief": "The task management engine, used to execute other processes"
+                },
+                {
+                    "logger": "Upgrade",
+                    "brief": "Activities performed during an upgrade of Administration Server"
+                }
+            ],
+            "related": [
+                {
+                    "logger": "AdminServer",
+                    "brief": "Top-level logger for Administration Server application events",
+                    "type": "internal"
+                },
+                {
+                    "logger": "adminsrvr.handlers",
+                    "brief": "Administration Server handlers execute the business logic behind a REST endpoint",
+                    "type": "group",
+                    "children": [
+                        {
+                            "logger": "Commands",
+                            "brief": "Handler for the /services/v2/commands endpoint",
+                            "related": [
+                                {
+                                    "logger": "adminsrvr.commands",
+                                    "brief": "Administration Server commands executed via the /services/v2/commands endpoint",
+                                    "type": "group",
+                                    "children": [
+                                        {
+                                            "logger": "Execute",
+                                            "brief": "Execute an Extract or Replicat process"
+                                        },
+                                        {
+                                            "logger": "FlushSequence",
+                                            "brief": "Updates a database sequence so that initial redo records are available"
+                                        },
+                                        {
+                                            "logger": "Purge",
+                                            "brief": "Purge history or trail files no longer needed"
+                                        },
+                                        {
+                                            "logger": "Report",
+                                            "brief": "Report on various items"
+                                        },
+                                        {
+                                            "logger": "StartStop",
+                                            "brief": "Start, stop or kill an Extract or Replicat process"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "logger": "ConfigFiles",
+                            "brief": "Handler for the /services/v2/config/files endpoint"
+                        },
+                        {
+                            "logger": "Connections",
+                            "brief": "Handler for the /services/v2/connections endpoint"
+                        },
+                        {
+                            "logger": "Credentials",
+                            "brief": "Handler for the /services/v2/credentials endpoint"
+                        },
+                        {
+                            "logger": "Enckeys",
+                            "brief": "Handler for the /services/v2/enckeys endpoint"
+                        },
+                        {
+                            "logger": "Extracts",
+                            "brief": "Handler for the /services/v2/extracts endpoint"
+                        },
+                        {
+                            "logger": "Masterkeys",
+                            "brief": "Handler for the /services/v2/masterkey endpoint"
+                        },
+                        {
+                            "logger": "Messages",
+                            "brief": "Handler for the /services/v2/messages endpoint"
+                        },
+                        {
+                            "logger": "Parameters",
+                            "brief": "Handler for the /services/v2/parameters endpoint"
+                        },
+                        {
+                            "logger": "ProcessResponse",
+                            "brief": "Shared business logic for the /services/v2/extracts and /services/v2/replicats endpoints"
+                        },
+                        {
+                            "logger": "Replicats",
+                            "brief": "Handler for the /services/v2/replicats endpoint"
+                        },
+                        {
+                            "logger": "Tasks",
+                            "brief": "Handler for the /services/v2/tasks endpoint"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "logger": "distsrvr",
+            "brief": "Top-level logger for Distribution Server application events"
+        },
+        {
+            "logger": "pmsrvr",
+            "brief": "Top-level logger for Performance Metrics Server application events"
+        },
+        {
+            "logger": "recvsrvr",
+            "brief": "Top-level logger for Receiver Server application events"
+        },
+        {
+            "logger": "ServiceManager",
+            "brief": "Top-level logger for Service Manager application events"
+        },
+        {
+            "logger": "RestAPI",
+            "brief": "Rest API calls made to OGG services",
+            "detail": "All REST API activities are logged to children of this logger.",
+            "children": [
+                {
+                    "logger": "adminsrvr",
+                    "brief": "REST API activity for Administration Server",
+                    "children": [
+                        {
+                            "logger": "InternalErrors",
+                            "brief": "Internal REST API errors"
+                        }
+                    ]
+                },
+                {
+                    "logger": "distsrvr",
+                    "brief": "REST API activity for Distribution Server",
+                    "children": [
+                        {
+                            "logger": "InternalErrors",
+                            "brief": "Internal REST API errors"
+                        }
+                    ]
+                },
+                {
+                    "logger": "pmsrvr",
+                    "brief": "REST API activity for Performance Metrics Server",
+                    "children": [
+                        {
+                            "logger": "InternalErrors",
+                            "brief": "Internal REST API errors"
+                        }
+                    ]
+                },
+                {
+                    "logger": "recvsrvr",
+                    "brief": "REST API activity for Receiver Server",
+                    "children": [
+                        {
+                            "logger": "InternalErrors",
+                            "brief": "Internal REST API errors"
+                        }
+                    ]
+                },
+                {
+                    "logger": "ServiceManager",
+                    "brief": "REST API activity for Service Manager",
+                    "children": [
+                        {
+                            "logger": "InternalErrors",
+                            "brief": "Internal REST API errors"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "logger": "audit",
+            "brief": "Security events",
+            "detail": "The 'audit' loggers capture details related to security.",
+            "children": [
+                {
+                    "logger": "RequestContextAudit",
+                    "brief": "Request Context Audit logging"
+                },
+                {
+                    "logger": "RequestPayloadAudit",
+                    "brief": "Request Payload Audit logging"
+                },
+                {
+                    "logger": "ResponseContextAudit",
+                    "brief": "Response Context Audit logging"
+                },
+                {
+                    "logger": "ResponsePayloadAudit",
+                    "brief": "Response Payload Audit logging"
+                },
+                {
+                    "logger": "UserManagerAudit",
+                    "brief": "Audit logger for authorized user management"
+                }
+            ]
+        },
+        {
+            "logger": "sca",
+            "brief": "Server Common Architecture",
+            "detail": "The Oracle GoldenGate services use a framework called the 'Server Common Architecture' (SCA) and messages issued to this logger relate to the SCA framework. The 'sca' logger is not used directly, but instead serves as the root logger for all SCA logging.",
+            "children": [
+                {
+                    "logger": "CommSec",
+                    "brief": "Communications security",
+                    "children": [
+                        {
+                            "logger": "SSL",
+                            "brief": "Oracle SSL Toolkit for C",
+                            "children": [
+                                {
+                                    "logger": "Certificate",
+                                    "brief": "SSL certificate validation"
+                                },
+                                {
+                                    "logger": "OpenSSL",
+                                    "brief": "OpenSSL wrapper for Oracle SSL"
+                                },
+                                {
+                                    "logger": "SSLTrace",
+                                    "brief": "Oracle SSL Toolkit for C Trace level logging"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "logger": "Config",
+                    "brief": "Application configuration",
+                    "children": [
+                        {
+                            "logger": "CommandLine",
+                            "brief": "Command line configuration processing"
+                        },
+                        {
+                            "logger": "Context",
+                            "brief": "Persistent application context"
+                        }
+                    ]
+                },
+                {
+                    "logger": "HttpServer",
+                    "brief": "HTTP server implementation",
+                    "children": [
+                        {
+                            "logger": "AcceptHeader",
+                            "brief": "HTTP 'Accept' request header validation"
+                        },
+                        {
+                            "logger": "HttpContext",
+                            "brief": "HTTP server request context"
+                        },
+                        {
+                            "logger": "HttpDigest",
+                            "brief": "HTTP Digest processing."
+                        },
+                        {
+                            "logger": "HttpLowLevel",
+                            "brief": "HTTP server low-level implementation"
+                        },
+                        {
+                            "logger": "HttpNetwork",
+                            "brief": "HTTP server network implementation"
+                        }
+                    ]
+                },
+                {
+                    "logger": "Modules",
+                    "brief": "Common SCA Modules",
+                    "children": [
+                        {
+                            "logger": "ConfigDataModule",
+                            "brief": "Configuration data module"
+                        },
+                        {
+                            "logger": "FilesModule",
+                            "brief": "File server module"
+                        },
+                        {
+                            "logger": "LogsModule",
+                            "brief": "Application logs module"
+                        },
+                        {
+                            "logger": "MetadataModule",
+                            "brief": "Metadata catalog module"
+                        },
+                        {
+                            "logger": "RequestsModule",
+                            "brief": "Asynchronous requests module"
+                        },
+                        {
+                            "logger": "ContentModule",
+                            "brief": "Static Content Server module"
+                        },
+                        {
+                            "logger": "AuthorizationModule",
+                            "brief": "Authorization module"
+                        },
+                        {
+                            "logger": "AuthorizationsModule",
+                            "brief": "Authorizations module"
+                        },
+                        {
+                            "logger": "ConfigModule",
+                            "brief": "Config module"
+                        },
+                        {
+                            "logger": "ErrorMessageModule",
+                            "brief": "Error Message requests module"
+                        }
+                    ]
+                },
+                {
+                    "logger": "Request",
+                    "brief": "Request for the server",
+                    "children": [
+                        {
+                            "logger": "Dispatcher",
+                            "brief": "HTTP request dispatching"
+                        },
+                        {
+                            "logger": "UriTemplate",
+                            "brief": "Dispatch map templates",
+                            "children": [
+                                {
+                                    "logger": "UriContext",
+                                    "brief": "Context for dispatch map template"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "logger": "Response",
+                    "brief": "Response from the main server"
+                },
+                {
+                    "logger": "UserManager",
+                    "brief": "Authorized user management",
+                    "children": [
+                        {
+                            "logger": "UserManagerLowLevel",
+                            "brief": "Authorized user management low-level implementation"
+                        }
+                    ]
+                },
+                {
+                    "logger": "FeatureFlags",
+                    "brief": "Conditional features"
+                },
+                {
+                    "logger": "FileManager",
+                    "brief": "Manage files in the OGG deployment"
+                },
+                {
+                    "logger": "FileSystem",
+                    "brief": "Filesystem services"
+                },
+                {
+                    "logger": "JsonPath",
+                    "brief": "JSON property access path"
+                },
+                {
+                    "logger": "JsonSchema",
+                    "brief": "JSON validation"
+                },
+                {
+                    "logger": "JStache",
+                    "brief": "Mustache templates for JSON"
+                },
+                {
+                    "logger": "SecureStore",
+                    "brief": "Secure storage for authorized user information"
+                },
+                {
+                    "logger": "ServiceDiscovery",
+                    "brief": "SCA Service Discovery"
+                },
+                {
+                    "logger": "Signals",
+                    "brief": "Signal handling internals"
+                },
+                {
+                    "logger": "StandardResponse",
+                    "brief": "Standard REST API response"
+                }
+            ]
+        },
+        {
+            "logger": "debug509",
+            "brief": "Details from incompatible record error message, issued by REPLICAT processes"
+        },
+        {
+            "logger": "ManagedLogging",
+            "brief": "Loggers related to Managed Logging",
+            "detail": "Information related to the managed logging infrastructure.",
+            "children": [
+                {
+                    "logger": "Unregistered",
+                    "brief": "Notifications for unregistered loggers are recorded here.",
+                    "detail": "The most common error in the managed logging subsystem is when a logger is used without being included in the global logger registry. All loggers must be registered in the 'ogg-loggers.json' file."
+                }
+            ]
+        }
+    ]
+}

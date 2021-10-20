@@ -1,0 +1,14 @@
+{"namespace": "GG_AVRO",
+"type": "record",
+"name": "TCUSTORD_AVRO",
+"fields": [
+     {"name": "CUST_CODE2", "type": "string", "primary_key":true },
+     {"name": "ORDER_DATE2",  "type": "string", "primary_key":true},
+     {"name": "PRODUCT_CODE", "type": "string", "primary_key":true},
+     {"name": "ORDER_ID", "type": "int", "primary_key":true},
+     {"name": "PRODUCT_PRICE", "type": ["double","null"]},
+     {"name": "PRODUCT_AMOUNT", "type": "long"},
+     {"name": "TRANSACTION_ID", "type": ["null","string"]}
+]
+}
+

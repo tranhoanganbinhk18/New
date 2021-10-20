@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   a p p - a d m i n s r v r - e v e n t s . x m l             -|
+   !-                                                               -|
+   !-   Critical Events logging control file for Admin Server       -|
+   !- ============================================================= -|
+  ! -->
+
+  <appender  name="ER-events.log"    class="RollingFileAppender">
+    <level  value="info"/>
+    <param   name="File"             value="ER-events.log"/>
+    <param   name="MaxFileSize"      value="10MB"/>
+    <param   name="MaxBackupIndex"   value="9"/>
+    <param   name="BufferedIO"       value="false"/>
+    <param   name="Append"           value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"          value="%d{%Y-%m-%dT%H:%M:%S%z}  %m%n"/>
+    </layout>
+  </appender>
+
+  <logger          name="ER-events.log" additivity="false">
+    <appender-ref  name="ER-events.log"/>
+    <level        value="info"/>
+  </logger>
+
+</configuration>

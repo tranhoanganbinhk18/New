@@ -1,0 +1,11 @@
+OGGSOURCE CASSANDRA
+
+-- When using sdk 3.11 or 3.10 or 3.9
+JVMCLASSPATH ggjava/ggjava.jar:/path/to/cassandra-driver-core/3.3.1/cassandra-driver-core-3.3.1.jar:dirprm:/path/to/apache-cassandra-3.11.0/lib/*:/path/to/gson/2.3/gson-2.3.jar:/path/to/jsch/0.1.54/jsch-0.1.54.jar:/path/to/commons-lang3/3.5/commons-lang3-3.5.jar    
+JVMBOOTOPTIONS -Dlogback.configurationFile=AdapterExamples/big-data/cassandracapture/logback.xml
+CLUSTERCONTACTPOINTS 127.0.0.1
+
+-- When using sdk 3.9
+--JVMCLASSPATH ggjava/ggjava.jar:/path/to/cassandra-driver-core/3.3.1/cassandra-driver-core-3.3.1.jar:dirprm:/path/to/apache-cassandra-3.9/lib/*:/path/to/gson/2.3/gson-2.3.jar:/path/to/jsch/0.1.54/jsch-0.1.54.jar:/path/to/commons-lang3/3.5/commons-lang3-3.5.jar    
+--JVMBOOTOPTIONS -Dlogback.configurationFile=AdapterExamples/big-data/cassandracapture/logback.xml
+

@@ -1,0 +1,25 @@
+# Configuration to load GoldenGate trail operation records 
+# into Amazon Redshift by chaining
+# File writer handler -> S3 Event handler -> Redshift Event handler.
+# Note: Recommended to only edit the configuration marked as  TODO
+
+gg.target=redshift
+
+#The S3 Event Handler
+#TODO: Edit the AWS region
+gg.eventhandler.s3.region=<aws region>
+#TODO: Edit the AWS S3 bucket
+gg.eventhandler.s3.bucketMappingTemplate=<s3 bucket>
+
+#The Redshift Event Handler
+#TODO: Edit ConnectionUrl
+gg.eventhandler.redshift.connectionURL=jdbc:redshift://aws-redshift-instance.cjoaij3df5if.us-east-2.redshift.amazonaws.com:5439/mydb
+#TODO: Edit Redshift user name
+gg.eventhandler.redshift.UserName=<db user name>
+#TODO: Edit Redshift password
+gg.eventhandler.redshift.Password=<db password>
+#TODO:Set the classpath to include AWS Java SDK and Redshift JDBC driver.
+gg.classpath=aws-java-sdk-1.11.356/lib/*:aws-java-sdk-1.11.356/third-party/lib/*:./RedshiftJDBC42-no-awssdk-1.2.8.1005.jar
+#TODO:Set the AWS access key and secret key.
+jvm.bootoptions=-Xmx4g -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm -Daws.accessKeyId=<AWS access key> -Daws.secretKey=<AWS secret key>
+gg.log=log4j

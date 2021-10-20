@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   s c a - r e s t a p i . x m l                               -|
+   !-                                                               -|
+   !-   Logging control file for recording all REST API calls       -|
+   !-   to an OGG deployment.                                       -|
+   \- ============================================================= -/
+  ! -->
+
+  <appender  name="sca-restapi.log"  class="RollingFileAppender">
+    <level  value="info"/>
+    <param   name="File"             value="restapi.log"/>
+    <param   name="MaxFileSize"      value="10MB"/>
+    <param   name="MaxBackupIndex"   value="9"/>
+    <param   name="BufferedIO"       value="false"/>
+    <param   name="Append"           value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"          value="%d{%Y-%m-%d %H:%M:%S%z} %-5p|%-36.36c| %m%n"/>
+    </layout>
+  </appender>
+
+  <!--
+   !-   M i c r o s e r v i c e s   A r c h i t e c t u r e
+  ! -->
+  <logger          name="RestAPI">
+    <appender-ref  name="sca-restapi.log"/>
+    <level        value="info"/>
+  </logger>
+
+</configuration>

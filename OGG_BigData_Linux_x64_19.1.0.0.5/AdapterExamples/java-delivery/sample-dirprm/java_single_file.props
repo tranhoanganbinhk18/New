@@ -1,0 +1,21 @@
+
+gg.handlerlist=javafile
+
+gg.handler.javafile.type=singlefile
+gg.handler.javafile.format=xml
+gg.handler.javafile.file=xml_output.xml
+
+gg.handler.javafile.mode=tx
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+
+javawriter.bootoptions=-Xmx32m -Xms32m -Djava.class.path=ggjava/ggjava.jar
+

@@ -1,0 +1,36 @@
+
+gg.handlerlist=hdfs
+
+gg.handler.hdfs.type=hdfs
+gg.handler.hdfs.includeTokens=false
+gg.handler.hdfs.maxFileSize=1g
+gg.handler.hdfs.pathMappingTemplate=/ogg1
+gg.handler.hdfs.fileRollInterval=0
+gg.handler.hdfs.inactivityRollInterval=0
+gg.handler.hdfs.fileNameMappingTemplate=${fullyQualifiedTableName}_${groupName}_${currentTimestamp}.txt
+gg.handler.hdfs.partitionByTable=true
+gg.handler.hdfs.rollOnMetadataChange=true
+gg.handler.hdfs.authType=none
+gg.handler.hdfs.format=delimitedtext
+gg.handler.hdfs.format.includeColumnNames=true
+
+gg.handler.hdfs.mode=tx
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+#Sample gg.classpath for Apache Hadoop
+gg.classpath=/var/lib/hadoop/share/hadoop/common/*:/var/lib/hadoop/share/hadoop/common/lib/*:/var/lib/hadoop/share/hadoop/hdfs/*:/var/lib/hadoop/share/hadoop/hdfs/lib/*:/var/lib/hadoop/etc/hadoop/:
+#Sample gg.classpath for CDH
+#gg.classpath=/opt/cloudera/parcels/CDH/lib/hadoop/client/*:/etc/hadoop/conf
+#Sample gg.classpath for HDP
+#gg.classpath=/usr/hdp/current/hadoop-client/client/*:/etc/hadoop/conf
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar
+

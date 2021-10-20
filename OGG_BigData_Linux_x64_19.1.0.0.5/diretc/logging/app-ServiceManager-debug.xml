@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   a p p - S e r v i c e M a n a g e r - d e b u g . x m l     -|
+   !-                                                               -|
+   !-   Debug logging control file for Service Manager              -|
+   !- ============================================================= -|
+  ! -->
+
+  <appender  name="sca-debug.log"  class="RollingFileAppender" enabled="false">
+    <level  value="debug"/>
+    <param   name="File"             value="%A-debug.log"/>
+    <param   name="MaxFileSize"      value="100MB"/>
+    <param   name="MaxBackupIndex"   value="9"/>
+    <param   name="BufferedIO"       value="false"/>
+    <param   name="Append"           value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"          value="%d{%Y-%m-%d %H:%M:%S} %-30t|%-5p|%-30.30c|%5L %-24.24C{1} | %m%n"/>
+    </layout>
+  </appender>
+
+  <root>
+    <level value="debug"/>
+    <appender-ref name="sca-debug.log"/>
+  </root>
+
+</configuration>

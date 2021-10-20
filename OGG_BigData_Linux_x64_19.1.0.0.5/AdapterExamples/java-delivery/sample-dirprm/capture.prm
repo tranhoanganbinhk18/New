@@ -1,0 +1,59 @@
+Extract capture
+
+-- A sample 'capture' (extract) parameter file, and the ggsci commands to run.
+--
+-- Add supplemental logging
+-- ggsci> dblogin userid gg, password <password>
+-- ggsci> add trandata gg.tcust*
+-- ggsci> info trandata gg.tcust*
+--
+-- (Optionally) clean up old extracts (dblogin first to unregister extract)
+-- ggsci> dblogin userid gg, password <password>
+-- ggsci> delete extract capture
+--
+-- Create a new 'capture' process writing to trail dirdat/aa
+-- ggsci> add extract capture, tranLog, begin now
+-- ggsci> add extTrail dirdat/aa, extract capture
+--
+
+-- login to DB for metadata (include the DSN for ODBC metadata sources)
+UserId "gguser", Password "<password>"
+
+-- metadata comes from db or source-def's file. Metadata must match trail data.
+-- The source-def file would be used for a pump (e.g,. running the Java or flat-file
+-- adapters) or a heterogeneous replicat
+-- SourceDefs dirdef/aa.def
+
+-- write trail data local, or remote. If sending to older release
+-- of GG (eg, 12.1.2 to 11.2), use "format release" option
+ExtTrail dirdat/aa
+
+-- RmtHost foo.example.com, mgrPort 7802
+-- RmtTrail dirdat/aa
+
+-- optionally capture additional (logged) columns, to be written to the trail
+GetUpdateBefores
+
+Table MYSCHEMA.SAMPLE_TABLE;
+
+-- example with wildcard tablenames (not schema names), optionally put additional data (tokens) into the trail
+Table GG.TCUST*,
+  tokens (
+   -- example using getenv's, storing values as tokens (note: some of
+   -- these change based on when/where they are stored (groupname,
+   -- hostname); others are actually constant and always available in
+   -- the header (e.g., CSN), and do not need to be stored as tokens)
+   TKN-GGENV-HOSTNAME     = @getenv("GGENVIRONMENT", "HOSTNAME")
+   TKN-GGENV-GROUPNAME    = @getenv("GGENVIRONMENT", "GROUPNAME")
+   TKN-GGENV-OSUSERNAME   = @getenv("GGENVIRONMENT", "OSUSERNAME")
+   TKN-LOGPOSITION        = @getenv("GGHEADER", "LOGPOSITION")
+   TKN-LOGRBA             = @getenv("GGHEADER", "LOGRBA")
+   TKN-XID                = @getenv("TRANSACTION", "XID")
+   TKN-CSN                = @getenv("TRANSACTION", "CSN")
+   TKN-REDOTHREAD         = @getenv("TRANSACTION", "REDOTHREAD")
+   -- pump only
+   TKN-FILESEQNO               = @getenv("RECORD", "FILESEQNO")
+   TKN-FILERBA                 = @getenv("RECORD", "FILERBA")
+  );
+
+

@@ -1,0 +1,8 @@
+REPLICAT rjava
+-- Trail file for this example is located in "AdapterExamples/trail" directory
+-- Command to add REPLICAT
+-- add replicat rjava, exttrail AdapterExamples/trail/tr
+TARGETDB LIBFILE libggjava.so SET property=dirprm/java_single_file.props
+REPORTCOUNT EVERY 1 MINUTES, RATE
+MAP QASOURCE.*, TARGET QASOURCE.*;
+

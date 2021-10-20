@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   o g g - g g s e r r . x m l                                 -|
+   !-                                                               -|
+   !-   Logging control file loaded for all OGG applications        -|
+   !- ============================================================= -|
+   !-   This file controls routing for OGG application messages.    -|
+   !-                                                               -|
+   !-   Application messages are historically written to the file,  -|
+   !-   ggserr.log, in the OGG installation folder. The name of     -|
+   !-   the logger where all application messages are sent is also  -|
+   !-   called, "ggserr.log".                                       -|
+   !-                                                               -|
+   !-   This file provides several options for routing messages,    -|
+   !-   and each option is identified by an appender with one       -|
+   !-   of the following names:                                     -|
+   !-                                                               -|
+   !-     - ggserr.Standard (default)                               -|
+   !-       All applications write to the file, ggserr.log.         -|
+   !-       When that file reaches 10MB, it is renamed to           -|
+   !-       "ggserr.log.N" and a new file is created. N is          -|
+   !-       a value from 1 to 9, allowing up to 100MB of space      -|
+   !-       for data. When more than nine files exist, the          -|
+   !-       oldest is deleted.                                      -|
+   !-                                                               -|
+   !-     - ggserr.Legacy                                           -|
+   !-       All applications write to the file, ggserr.log.         -|
+   !-       The file is never truncated and can become large,       -|
+   !-                                                               -|
+   !-     - ggserr.Syslog                                           -|
+   !-       Application messages are sent to the local system log   -|
+   !-                                                               -|
+   !-     - ggserr.None                                             -|
+   !-       Application messages are discarded.                     -|
+   !-                                                               -|
+   !-   Select one of these options by modifying the value for      -|
+   !-   "appender-ref" below.                                       -|
+   !-                                                               -|
+   \- ============================================================= -/
+  ! -->
+
+  <appender  name="ggserr.Standard" class="RollingFileAppender">
+    <level  value="info"/>
+    <param   name="File"            value="ggserr.log"/>
+    <param   name="MaxFileSize"     value="10MB"/>
+    <param   name="MaxBackupIndex"  value="9"/>
+    <param   name="BufferedIO"      value="false"/>
+    <param   name="Append"          value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"         value="%d{%Y-%m-%dT%H:%M:%S%z}  %m%n"/>
+    </layout>
+  </appender>
+
+  <!--
+   !- The ggserr.Legacy adapter will write to ggserr.log without
+   !- rolling it over
+   !-
+  <appender  name="ggserr.Legacy"   class="FileAppender">
+    <level  value="info"/>
+    <param   name="File"            value="ggserr.log"/>
+    <param   name="BufferedIO"      value="false"/>
+    <param   name="Append"          value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"         value="%-19.19d{%Y-%m-%d %H:%M:%S}  %m%n"/>
+    </layout>
+  </appender>
+  ! -->
+
+  <!--
+   !- The ggserr.Syslog adapter will write all messages to the local
+   !- system log.
+   !-
+  <appender  name="ggserr.Syslog"   class="SyslogAppender">
+    <level  value="info"/>
+    <param   name="Facility"        value="Application"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"         value="%-19.19d{%Y-%m-%d %H:%M:%S}  %m%n"/>
+    </layout>
+  </appender>
+  ! -->
+
+  <!--
+   !- The ggserr.None adapter will turn off all event logging.
+   !-
+  <appender  name="ggserr.None"     class="SyslogAppender">
+    <level  value="off"/>
+  </appender>
+  ! -->
+
+  <logger          name="ggserr.log" additivity="false">
+    <appender-ref  name="ggserr.Standard"/>
+    <level        value="info"/>
+  </logger>
+
+</configuration>

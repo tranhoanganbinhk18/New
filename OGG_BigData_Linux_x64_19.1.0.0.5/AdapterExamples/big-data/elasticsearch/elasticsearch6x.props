@@ -1,0 +1,21 @@
+gg.handlerlist=elasticsearch
+gg.handler.elasticsearch.type=elasticsearch
+
+## Handler properties for Elasticsearch 6.x and 7.0.0
+gg.handler.elasticsearch.ServerAddressList=<Elasticsearch address>:<Port>
+gg.handler.elasticsearch.clientSettingsFile=client6x.properties
+gg.handler.elasticsearch.version=6.x
+#gg.handler.elasticsearch.bulkWrite=true
+
+# For ES 6.x and 7.0.0 connectivity
+gg.classpath=/path/to/elastic/lib/*:/path/to/elastic/modules/transport-netty4/*:/path/to/elastic/modules/reindex/*:/path/to/elastic/modules/x-pack-core/*:/path/to/elastic/modules/percolator/*:/path/to/elastic/modules/lang-mustache/*:/path/to/elastic/modules/parent-join/*:
+
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

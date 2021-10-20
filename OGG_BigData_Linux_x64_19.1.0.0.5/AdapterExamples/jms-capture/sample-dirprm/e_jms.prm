@@ -1,0 +1,38 @@
+Extract e_jms
+
+-- (1) Before starting mgr, put the JVM in the library path
+--   (Solaris/Linux=> LD_LIBRARY_PATH, z/OS,AIX=> LIBPATH, Windows=> PATH)
+--     sh> echo LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+--     ggsci> start mgr
+--
+--   (Optional) When testing, clean up previous tests
+--     sh> rm dirdat/tz00*
+--     ggsci> delete extract e_jms
+--
+-- (2) Add the JMS VAM capture
+--     ggsci> add extract e_jms, VAM
+--     ggsci> info extract e_jms
+--
+-- (3) Add the target trail (both in ggsci, and the prm file)
+--     ggsci> add extTrail dirdat/tz, extract e_jms, megabytes 100
+
+
+
+VAM libggjava_vam.so PARAMS (dirprm/jmsvam.properties)
+-- VAM ggjava_vam.dll PARAMS (dirprm/jmsvam.properties)
+
+GetEnv (JAVA_HOME)
+GetEnv (LD_LIBRARY_PATH)
+
+ReportCount Every 1000 Records, Rate
+
+GetUpdateBefores
+
+TranLogOptions VAMCOMPATIBILITY 1
+TranLogOptions GETMETADATAFROMVAM
+
+ExtTrail dirdat/tz
+
+Table GG.*;
+
+

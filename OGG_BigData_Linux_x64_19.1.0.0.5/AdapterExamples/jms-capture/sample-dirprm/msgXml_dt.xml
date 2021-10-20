@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<tx>
+<op table='GG.ALL_DATATYPES' type='I' ts='2012-06-10:12:23:34.000000' pos='00000000020000000152'>
+<col name='KEY_COL' index='0'>
+<after>1234</after>
+</col>
+<col name='CHAR_COL' index='1'>
+<after>Char Val</after>
+</col>
+<col name='VARCHAR_COL' index='2'>
+<after>Varchar Val</after>
+</col>
+<col name='SMALL_INT_COL' index='3'>
+<after>12</after>
+</col>
+<col name='BIG_INT_COL' index='4'>
+<after>1234567890987654321</after>
+</col>
+<col name='CHAR_COL2' index='5'>
+<after>Char Val 2</after>
+</col>
+<col name='SMALL_DEC_COL' index='6'>
+<after>2.3</after>
+</col>
+<col name='MED_DEC_COL' index='7'>
+<after>12345.6789</after>
+</col>
+<col name='BIG_DEC_COL' index='8'>
+<after>1234567890987654321.123456789</after>
+</col>
+<col name='VARCHAR_COL2' index='9'>
+<after>Varchar Val2</after>
+</col>
+<col name='DATE_COL' index='10'>
+<after>2012-07-11 10:23:45</after>
+</col>
+<col name='TIMESTAMP_COL' index='11'>
+<after>2012-07-11 10:34:56.123456789</after>
+</col>
+</op>
+</tx>

@@ -1,0 +1,30 @@
+
+--  Linux/Unix: set library path to find libjvm.so (and dependent libraries)
+--    using LD_LIBRARY_PATH (Linux/Solaris), LIBPATH (AIX), SHLIB_PATH (HP-UX), etc.
+--  On Windows: set the PATH to find jvm.dll (use the 64-bit JVM for the 64-bit extract)
+
+-- Manager port number
+Port 7801
+
+-- ports that mgr may use when starting server, replicat
+DynamicPortList 7810-7820, 7830
+
+-- Frequency manager checks for extract/replicat lag.
+LagReportMinutes 5
+
+-- Critical lag threshold, after which a warning message is logged (ggserr.log)
+LagCriticalMinutes 10
+
+-- Wait a couple seconds before manager verifies processes are running
+StartupValidationDelay 2
+
+
+-- # Optionally automatically start (e)xtract/(r)eplicat when mgr starts
+-- AutoStart ER *
+
+-- # Restart some or all processes, in the event of temporary network issues, etc
+-- AutoRestart ER *, Retries 2, WaitMinutes 1, ResetMinutes 240
+
+-- # Manage trail files centrally via mgr (instead of in extract/replicat prm file)
+-- PurgeOldExtracts dirdat/xy*, UsecheckPoints, MinKeepFiles 10
+

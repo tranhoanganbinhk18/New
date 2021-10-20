@@ -1,0 +1,22 @@
+  <$op.TableName sqlType='$op.sqlType' opType='$op.opType' txInd='$op.txState' ts='$op.Timestamp' numCols='$op.NumColumns' pos='$op.Position'>
+#foreach( $col in $op )
+#if( ! $col.isMissing())
+    <$col.Name colIndex='$col.Index'>
+#if( $col.hasBefore())
+#if( $col.isBeforeNull())
+      <before><isNull/></before>
+#else
+      <before><![CDATA[$col.before]]></before>
+#{end}## if col has 'before' value
+#{end}## if col 'before' is null
+#if( $col.hasValue())
+#if( $col.isNull())
+      <after><isNull/></after>
+#{else}
+      <after><![CDATA[$col.value]]></after>
+#{end}## if col is null
+#{end}## if col has value
+    </$col.Name>
+#{end}## if column is not missing
+#{end}## for loop over columns
+  </$op.TableName>

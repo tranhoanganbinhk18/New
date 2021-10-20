@@ -1,0 +1,20 @@
+# 
+# TCP/IP error handling parameters
+#
+# Default error response is abend
+#
+
+# Error         Response    Delay (csecs)    Max Retries
+
+ECONNABORTED     RETRY        1000               10
+#ECONNREFUSED    ABEND           0                0
+ECONNREFUSED     RETRY        1000               12
+ECONNRESET       RETRY         500               10
+ENETDOWN         RETRY        3000               50
+ENETRESET        RETRY        1000               10
+ENOBUFS          RETRY         100               60
+ENOTCONN         RETRY         100               10
+EPIPE            RETRY         500               10
+ESHUTDOWN        RETRY        1000               10
+ETIMEDOUT        RETRY        1000               10
+NODYNPORTS       RETRY         100               10

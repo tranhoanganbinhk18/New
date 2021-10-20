@@ -1,0 +1,99 @@
+
+gg.handlerlist=filewriter
+
+#The File Writer Handler
+gg.handler.filewriter.type=filewriter
+gg.handler.filewriter.mode=op
+gg.handler.filewriter.pathMappingTemplate=./dirout
+gg.handler.filewriter.stateFileDirectory=./dirsta
+gg.handler.filewriter.fileNameMappingTemplate=${fullyQualifiedTableName}_${currentTimestamp}.txt
+gg.handler.filewriter.fileRollInterval=7m
+gg.handler.filewriter.finalizeAction=delete
+gg.handler.filewriter.inactivityRollInterval=7m
+gg.handler.filewriter.format=avro_row_ocf
+gg.handler.filewriter.includetokens=true
+gg.handler.filewriter.partitionByTable=true
+#Selecting the Parquet Event Handler
+gg.handler.filewriter.eventHandler=parquet
+gg.handler.filewriter.rollOnShutdown=true
+
+#The Parquet Event Handler
+gg.eventhandler.parquet.type=parquet
+gg.eventhandler.parquet.pathMappingTemplate=./dirparquet
+gg.eventhandler.parquet.writeToHDFS=false
+gg.eventhandler.parquet.finalizeAction=delete
+#Selecting the S3 Event Handler
+gg.eventhandler.parquet.eventHandler=s3
+gg.eventhandler.parquet.fileNameMappingTemplate=${tableName}_${currentTimestamp}.parquet
+
+#The S3 Event Handler
+gg.eventhandler.s3.type=s3
+gg.eventhandler.s3.region=us-west-2
+gg.eventhandler.s3.proxyServer=www-proxy.us.oracle.com
+gg.eventhandler.s3.proxyPort=80
+gg.eventhandler.s3.bucketMappingTemplate=tomsfunbucket
+gg.eventhandler.s3.pathMappingTemplate=thepath
+gg.eventhandler.s3.finalizeAction=none
+
+#The ORC Event Handler
+gg.eventhandler.orc.type=orc
+gg.eventhandler.orc.pathMappingTemplate=./dirorc
+gg.eventhandler.orc.writeToHDFS=false
+gg.eventhandler.orc.finalizeAction=none
+gg.eventhandler.orc.fileNameMappingTemplate=${tableName}_${currentTimestamp}.orc
+#gg.eventhandler.orc.eventHandler=s3
+
+#The OCI Event handler
+gg.eventhandler.oci.type=oci
+gg.eventhandler.oci.configFilePath=~/.oci/config
+gg.eventhandler.oci.profile=DEFAULT
+gg.eventhandler.oci.namespace=namespace
+gg.eventhandler.oci.region=us-ashburn-1
+gg.eventhandler.oci.compartmentID=ocid1.compartment.oc1..aaaaaaaajd
+gg.eventhandler.oci.pathMappingTemplate=${schemaName}
+gg.eventhandler.oci.bucketMappingTemplate=${schemaName}
+gg.eventhandler.oci.fileNameMappingTemplate=${tableName}_${currentTimestamp}.txt
+gg.eventhandler.oci.finalizeAction=NONE
+
+#The OCI Classic Event Handler
+gg.eventhandler.oci-c.type=oci-c
+gg.eventhandler.oci-c.serverURL=https://servicename.storage.oraclecloud.com/
+gg.eventhandler.oci-c.tenantID=ocictenantid
+gg.eventhandler.oci-c.serviceName=ocic_servicename
+gg.eventhandler.oci-c.username=ocic_username
+gg.eventhandler.oci-c.password=ocic_pwd
+gg.eventhandler.oci-c.pathMappingTemplate=${schemaName}
+gg.eventhandler.oci-c.containerMappingTemplate=${schemaName}
+gg.eventhandler.oci-c.fileNameMappingTemplate=${tableName}_${currentTimestamp}.txt
+gg.eventhandler.oci-c.finalizeAction=NONE
+
+#The HDFS Event Handler
+gg.eventhandler.hdfs.type=hdfs
+gg.eventhandler.hdfs.pathMappingTemplate=/tomsdir
+gg.eventhandler.hdfs.finalizeAction=none
+gg.eventhandler.hdfs.fileNameMappingTemplate=${fullyQualifiedTableName}_${currentTimestamp}.txt
+
+#The Command Event Handler
+gg.eventhandler.command.type=command
+gg.eventhandler.command.command=testScript.sh
+gg.eventhandler.command.cmdWaitMilli=10000
+gg.eventhandler.command.multithreaded=true
+gg.eventhandler.command.commandArgumentTemplate=${tablename},${datafilename},${countoperations}
+
+
+goldengate.userexit.timestamp=utc
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+gg.includeggtokens=true
+gg.report.time=30sec
+
+#Set the classpath here
+#User TODO - Need the AWS Java SDK, Parquet Dependencies, HDFS Client Dependencies
+gg.classpath=
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm -Daws.accessKeyId=your_access_key -Daws.secretKey=your_secret_key 
+

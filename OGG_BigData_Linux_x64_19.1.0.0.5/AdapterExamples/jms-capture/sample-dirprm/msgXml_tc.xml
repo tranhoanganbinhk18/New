@@ -1,0 +1,353 @@
+<tx ts='2012-11-06 11:18:31.000000' numOps='1' startPos='00000000000000001137' endPos='00000000000000001137'>
+  <GG.TCUSTMER sqlType='INSERT' opType='INSERT' txInd='BEGIN' ts='2012-11-06 11:18:31.000000' numCols='4' pos='00000000000000001137'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[WILL]]></after>
+    </CUST_CODE>
+    <NAME colIndex='1'>
+      <after><![CDATA[BG SOFTWARE CO.]]></after>
+    </NAME>
+    <CITY colIndex='2'>
+      <after><![CDATA[SEATTLE]]></after>
+    </CITY>
+    <STATE colIndex='3'>
+      <after><![CDATA[WA]]></after>
+    </STATE>
+  </GG.TCUSTMER>
+</tx>
+<tx ts='2012-11-06 11:18:31.000000' numOps='1' startPos='00000000000000001311' endPos='00000000000000001311'>
+  <GG.TCUSTMER sqlType='INSERT' opType='INSERT' txInd='MIDDLE' ts='2012-11-06 11:18:31.000000' numCols='4' pos='00000000000000001311'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[JANE]]></after>
+    </CUST_CODE>
+    <NAME colIndex='1'>
+      <after><![CDATA[ROCKY FLYER INC.]]></after>
+    </NAME>
+    <CITY colIndex='2'>
+      <after><![CDATA[DENVER]]></after>
+    </CITY>
+    <STATE colIndex='3'>
+      <after><![CDATA[CO]]></after>
+    </STATE>
+  </GG.TCUSTMER>
+</tx>
+<tx ts='2012-11-06 11:18:31.000000' numOps='1' startPos='00000000000000001459' endPos='00000000000000001459'>
+  <GG.TCUSTORD sqlType='INSERT' opType='INSERT' txInd='MIDDLE' ts='2012-11-06 11:18:31.000000' numCols='7' pos='00000000000000001459'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[WILL]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <after><![CDATA[1994-09-30:15:33:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <after><![CDATA[CAR]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <after><![CDATA[144]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <after><![CDATA[17520.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <after><![CDATA[3]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:31.000000' numOps='1' startPos='00000000000000001647' endPos='00000000000000001647'>
+  <GG.TCUSTORD sqlType='INSERT' opType='INSERT' txInd='END' ts='2012-11-06 11:18:31.000000' numCols='7' pos='00000000000000001647'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[JANE]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <after><![CDATA[1995-11-11:13:52:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <after><![CDATA[PLANE]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <after><![CDATA[256]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <after><![CDATA[133300.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <after><![CDATA[1]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000001837' endPos='00000000000000001837'>
+  <GG.TCUSTMER sqlType='INSERT' opType='INSERT' txInd='BEGIN' ts='2012-11-06 11:18:55.000000' numCols='4' pos='00000000000000001837'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[DAVE]]></after>
+    </CUST_CODE>
+    <NAME colIndex='1'>
+      <after><![CDATA[DAVE'S PLANES INC.]]></after>
+    </NAME>
+    <CITY colIndex='2'>
+      <after><![CDATA[TALLAHASSEE]]></after>
+    </CITY>
+    <STATE colIndex='3'>
+      <after><![CDATA[FL]]></after>
+    </STATE>
+  </GG.TCUSTMER>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000002020' endPos='00000000000000002020'>
+  <GG.TCUSTMER sqlType='INSERT' opType='INSERT' txInd='MIDDLE' ts='2012-11-06 11:18:55.000000' numCols='4' pos='00000000000000002020'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[BILL]]></after>
+    </CUST_CODE>
+    <NAME colIndex='1'>
+      <after><![CDATA[BILL'S USED CARS]]></after>
+    </NAME>
+    <CITY colIndex='2'>
+      <after><![CDATA[DENVER]]></after>
+    </CITY>
+    <STATE colIndex='3'>
+      <after><![CDATA[CO]]></after>
+    </STATE>
+  </GG.TCUSTMER>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000002168' endPos='00000000000000002168'>
+  <GG.TCUSTMER sqlType='INSERT' opType='INSERT' txInd='END' ts='2012-11-06 11:18:55.000000' numCols='4' pos='00000000000000002168'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[ANN]]></after>
+    </CUST_CODE>
+    <NAME colIndex='1'>
+      <after><![CDATA[ANN'S BOATS]]></after>
+    </NAME>
+    <CITY colIndex='2'>
+      <after><![CDATA[SEATTLE]]></after>
+    </CITY>
+    <STATE colIndex='3'>
+      <after><![CDATA[WA]]></after>
+    </STATE>
+  </GG.TCUSTMER>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000002311' endPos='00000000000000002311'>
+  <GG.TCUSTORD sqlType='INSERT' opType='INSERT' txInd='BEGIN' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000002311'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[BILL]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <after><![CDATA[1995-12-31:15:00:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <after><![CDATA[CAR]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <after><![CDATA[765]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <after><![CDATA[15000.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <after><![CDATA[3]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000002526' endPos='00000000000000002526'>
+  <GG.TCUSTORD sqlType='INSERT' opType='INSERT' txInd='MIDDLE' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000002526'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[BILL]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <after><![CDATA[1996-01-01:00:00:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <after><![CDATA[TRUCK]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <after><![CDATA[333]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <after><![CDATA[26000.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <after><![CDATA[15]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000002716' endPos='00000000000000002716'>
+  <GG.TCUSTORD sqlType='INSERT' opType='INSERT' txInd='END' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000002716'>
+    <CUST_CODE colIndex='0'>
+      <after><![CDATA[DAVE]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <after><![CDATA[1993-11-03:07:51:35]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <after><![CDATA[PLANE]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <after><![CDATA[600]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <after><![CDATA[135000.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <after><![CDATA[2]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <after><![CDATA[200]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000002906' endPos='00000000000000002906'>
+  <GG.TCUSTORD sqlType='UPDATE' opType='UPDATE_FIELDCOMP' txInd='BEGIN' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000002906'>
+    <CUST_CODE colIndex='0'>
+      <before><![CDATA[BILL]]></before>
+      <after><![CDATA[BILL]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <before><![CDATA[1995-12-31:15:00:00]]></before>
+      <after><![CDATA[1995-12-31:15:00:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <before><![CDATA[CAR]]></before>
+      <after><![CDATA[CAR]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <before><![CDATA[765]]></before>
+      <after><![CDATA[765]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <before><![CDATA[15000.00]]></before>
+      <after><![CDATA[14000.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <before><![CDATA[3]]></before>
+      <after><![CDATA[3]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <before><![CDATA[100]]></before>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000003311' endPos='00000000000000003311'>
+  <GG.TCUSTORD sqlType='UPDATE' opType='UPDATE_FIELDCOMP' txInd='MIDDLE' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000003311'>
+    <CUST_CODE colIndex='0'>
+      <before><![CDATA[BILL]]></before>
+      <after><![CDATA[BILL]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <before><![CDATA[1996-01-01:00:00:00]]></before>
+      <after><![CDATA[1996-01-01:00:00:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <before><![CDATA[TRUCK]]></before>
+      <after><![CDATA[TRUCK]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <before><![CDATA[333]]></before>
+      <after><![CDATA[333]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <before><![CDATA[26000.00]]></before>
+      <after><![CDATA[25000.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <before><![CDATA[15]]></before>
+      <after><![CDATA[15]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <before><![CDATA[100]]></before>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000003691' endPos='00000000000000003691'>
+  <GG.TCUSTORD sqlType='UPDATE' opType='UPDATE_FIELDCOMP' txInd='MIDDLE' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000003691'>
+    <CUST_CODE colIndex='0'>
+      <before><![CDATA[WILL]]></before>
+      <after><![CDATA[WILL]]></after>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <before><![CDATA[1994-09-30:15:33:00]]></before>
+      <after><![CDATA[1994-09-30:15:33:00]]></after>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <before><![CDATA[CAR]]></before>
+      <after><![CDATA[CAR]]></after>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <before><![CDATA[144]]></before>
+      <after><![CDATA[144]]></after>
+    </ORDER_ID>
+    <PRODUCT_PRICE colIndex='4'>
+      <before><![CDATA[17520.00]]></before>
+      <after><![CDATA[16520.00]]></after>
+    </PRODUCT_PRICE>
+    <PRODUCT_AMOUNT colIndex='5'>
+      <before><![CDATA[3]]></before>
+      <after><![CDATA[3]]></after>
+    </PRODUCT_AMOUNT>
+    <TRANSACTION_ID colIndex='6'>
+      <before><![CDATA[100]]></before>
+      <after><![CDATA[100]]></after>
+    </TRANSACTION_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000004067' endPos='00000000000000004067'>
+  <GG.TCUSTMER sqlType='UPDATE' opType='UPDATE_FIELDCOMP' txInd='END' ts='2012-11-06 11:18:55.000000' numCols='4' pos='00000000000000004067'>
+    <CUST_CODE colIndex='0'>
+      <before><![CDATA[ANN]]></before>
+      <after><![CDATA[ANN]]></after>
+    </CUST_CODE>
+    <NAME colIndex='1'>
+      <before><![CDATA[ANN'S BOATS]]></before>
+      <after><![CDATA[ANN'S BOATS]]></after>
+    </NAME>
+    <CITY colIndex='2'>
+      <before><![CDATA[SEATTLE]]></before>
+      <after><![CDATA[NEW YORK]]></after>
+    </CITY>
+    <STATE colIndex='3'>
+      <before><![CDATA[WA]]></before>
+      <after><![CDATA[NY]]></after>
+    </STATE>
+  </GG.TCUSTMER>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000004354' endPos='00000000000000004354'>
+  <GG.TCUSTORD sqlType='DELETE' opType='DELETE' txInd='BEGIN' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000004354'>
+    <CUST_CODE colIndex='0'>
+      <before><![CDATA[DAVE]]></before>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <before><![CDATA[1993-11-03:07:51:35]]></before>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <before><![CDATA[PLANE]]></before>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <before><![CDATA[600]]></before>
+    </ORDER_ID>
+  </GG.TCUSTORD>
+</tx>
+<tx ts='2012-11-06 11:18:55.000000' numOps='1' startPos='00000000000000004534' endPos='00000000000000004534'>
+  <GG.TCUSTORD sqlType='DELETE' opType='DELETE' txInd='END' ts='2012-11-06 11:18:55.000000' numCols='7' pos='00000000000000004534'>
+    <CUST_CODE colIndex='0'>
+      <before><![CDATA[JANE]]></before>
+    </CUST_CODE>
+    <ORDER_DATE colIndex='1'>
+      <before><![CDATA[1995-11-11:13:52:00]]></before>
+    </ORDER_DATE>
+    <PRODUCT_CODE colIndex='2'>
+      <before><![CDATA[PLANE]]></before>
+    </PRODUCT_CODE>
+    <ORDER_ID colIndex='3'>
+      <before><![CDATA[256]]></before>
+    </ORDER_ID>
+  </GG.TCUSTORD>
+</tx>

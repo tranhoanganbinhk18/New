@@ -1,0 +1,18 @@
+gg.handlerlist=jdbcwriter
+gg.handler.jdbcwriter.type=jdbc
+
+#Handler properties for MySQL database target
+gg.handler.jdbcwriter.DriverClass=com.mysql.jdbc.Driver
+gg.handler.jdbcwriter.connectionURL=jdbc:mysql://<DBServer address>:3306/<database name>
+gg.handler.jdbcwriter.userName=<dbuser>
+gg.handler.jdbcwriter.password=<dbpassword>
+gg.classpath=/path/to/mysql/jdbc/driver//mysql-connector-java-5.1.39-bin.jar
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+gg.log=log4j
+gg.log.level=INFO
+gg.report.time=30sec
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=.:ggjava/ggjava.jar:./dirprm
+

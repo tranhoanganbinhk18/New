@@ -1,0 +1,10 @@
+REPLICAT amhdfs
+-- Trail file for this example is located in "AdapterExamples/trail" directory
+-- Command to add REPLICAT
+-- add replicat amhdfs, exttrail AdapterExamples/trail/tr
+TARGETDB LIBFILE libggjava.so SET property=dirprm/avro_mdp_hdfs.props
+REPORTCOUNT EVERY 1 MINUTES, RATE
+GROUPTRANSOPS 10000
+MAP QASOURCE.TCUSTMER, TARGET GG_AVRO.TCUSTMER_AVRO, COLMAP(USEDEFAULTS, CUST_CODE2=CUST_CODE, CITY2=CITY);
+MAP QASOURCE.TCUSTORD, TARGET GG_AVRO.TCUSTORD_AVRO, COLMAP(USEDEFAULTS, CUST_CODE2=CUST_CODE, ORDER_DATE2=ORDER_DATE);
+

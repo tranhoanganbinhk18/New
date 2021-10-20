@@ -1,0 +1,18 @@
+<configuration debug="false">
+  <!--
+   | GROUPNAME is the GoldenGate process name (the "name" in "add extract {name}")
+   -->
+  <contextName>${GROUPNAME:-ggjava}</contextName>
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%-4relative [%thread-%contextName] %-5level %logger{30} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="oracle.goldengate" level="INFO" />
+  <!--logger name="oracle.goldengate" level="DEBUG" /-->
+  <!--root level="DEBUG"-->
+  <root level="WARN">
+     <!--appender-ref ref="FILE" /-->
+     <appender-ref ref="STDOUT" />
+  </root>
+</configuration>

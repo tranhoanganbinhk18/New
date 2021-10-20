@@ -1,0 +1,43 @@
+<configuration>
+  <!--
+   | GROUPNAME is the GoldenGate process name (the "name" in "add extract {name}")
+   -->
+  <contextName>${GROUPNAME:-ggjava}</contextName>
+  <property resource="app.properties" />
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- set prudent=true if multiple processes (JVM's) writing to the same log file -->
+    <prudent>false</prudent>
+    <!--
+     | Current logfile name and location.
+     -->
+    <file>${CONTEXT_NAME}.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!--
+       | Rollover to "dirout" directory, old logs automatically compressed.
+       -->
+      <fileNamePattern>dirout/${CONTEXT_NAME}_%d{yyyy-MM-dd}_%i.log.gz</fileNamePattern>
+      <!--
+        | Rollover daily or at the max file size. Periodically purge old logs.
+        -->
+      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>10MB</maxFileSize>
+        <maxHistory>5</maxHistory>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+     <pattern>%d.%-4relative [%contextName-%thread] %-5level %logger{30} - %msg%n</pattern>
+     <immediateFlush>false</immediateFlush>
+     <outputPatternAsHeader>true</outputPatternAsHeader>
+    </encoder>
+  </appender>
+   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%-4relative [%thread-%contextName] %-5level %logger{30} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <logger name="oracle.goldengate" level="INFO" />
+  <root level="WARN">
+     <appender-ref ref="FILE" />
+     <!-- <appender-ref ref="STDOUT" /> -->
+  </root>
+</configuration>

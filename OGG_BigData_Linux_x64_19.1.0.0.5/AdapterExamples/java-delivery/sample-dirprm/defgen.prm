@@ -1,0 +1,11 @@
+
+-- To generate trail source-definitions for GG v11.2 Adapters, use GG 11.2 defgen,
+-- or use GG 12.1.x defgen with "format 11.2" definition format.
+-- If using GG 12.1.x as a source for GG 11.2 adapters, also generate format 11.2 trails.
+
+UserId myDB_login, Password <password>
+
+DefsFile dirdef/my_source.def
+
+Table myschema.*;
+

@@ -1,0 +1,43 @@
+*
+* Definitions created/modified  2010-06-16 10:29
+*
+*  Field descriptions for each column entry:
+*
+*     1    Name
+*     2    Data Type
+*     3    External Length
+*     4    Fetch Offset
+*     5    Scale
+*     6    Level
+*     7    Null
+*     8    Bump if Odd
+*     9    Internal Length
+*    10    Binary Length
+*    11    Table Length
+*    12    Most Significant DT
+*    13    Least Significant DT
+*    14    High Precision
+*    15    Low Precision
+*    16    Elementary Item
+*    17    Occurs
+*    18    Key Column
+*    19    Sub Data Type
+*
+*
+Definition for table GG.ALL_DATATYPES
+Record length: 254
+Syskey: 0
+Columns: 12
+KEY_COL        134     11        0  0  0 1 0      8      8      8 0 0 0 0 1    0 1 3
+CHAR_COL         0     10       12  0  0 1 0     10     10      0 0 0 0 0 1    0 0 0
+VARCHAR_COL     64     20       26  0  0 1 0     20     20      0 0 0 0 0 1    0 0 0
+SMALL_INT_COL  134      8       52  0  0 1 0      8      8      8 0 0 0 0 1    0 0 3
+BIG_INT_COL     64     21       64  0  0 1 0     21     21     21 0 0 0 0 1    0 0 3
+CHAR_COL2        0     10       90  0  0 1 0     10     10      0 0 0 0 0 1    0 0 0
+SMALL_DEC_COL  134      8      104  2  0 1 0      8      8      8 0 0 0 0 1    0 0 3
+MED_DEC_COL    134     17      116  7  0 1 0      8      8      8 0 0 0 0 1    0 0 3
+BIG_DEC_COL     64     40      128 10  0 1 0     40     40     40 0 0 0 0 1    0 0 3
+VARCHAR_COL2    64     20      174  0  0 1 0     20     20      0 0 0 0 0 1    0 0 0
+DATE_COL       192     19      200  0  0 1 0     19     19     19 0 5 0 0 1    0 0 0
+TIMESTAMP_COL  192     29      222  0  0 1 0     29     29     29 0 6 0 0 1    0 0 0
+End of definition

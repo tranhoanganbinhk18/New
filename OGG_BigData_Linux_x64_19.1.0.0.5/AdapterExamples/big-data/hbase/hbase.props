@@ -1,0 +1,33 @@
+
+gg.handlerlist=hbase
+
+gg.handler.hbase.type=hbase
+gg.handler.hbase.hBaseColumnFamilyName=cf
+gg.handler.hbase.keyValueDelimiter=CDATA[=]
+gg.handler.hbase.keyValuePairDelimiter=CDATA[,]
+gg.handler.hbase.encoding=UTF-8
+gg.handler.hbase.pkUpdateHandling=abend
+gg.handler.hbase.nullValueRepresentation=CDATA[NULL]
+gg.handler.hbase.authType=none
+gg.handler.hbase.includeTokens=false
+
+gg.handler.hbase.mode=tx
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+#Sample gg.classpath for Apache HBase
+gg.classpath=/var/lib/hbase/lib/*:/var/lib/hbase/conf/:
+#Sample gg.classpath for CDH
+#gg.classpath=/opt/cloudera/parcels/CDH/lib/hbase/lib/*:/etc/hbase/conf
+#Sample gg.classpath for HDP
+#gg.classpath=/usr/hdp/current/hbase-client/lib/*:/etc/hbase/conf
+
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar
+

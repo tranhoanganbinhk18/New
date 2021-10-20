@@ -1,0 +1,32 @@
+REPLICAT JAVAUE
+
+-- Sample replicat prm file for the Oracle GoldenGate for Java user-exit. A properties
+-- file configures the user-exit; by default named "dirprm/{replicat_name}.properties"
+-- e.g., javaue.prm loads javaue.properties.  The user-exit runs in a replicat:
+--   ggsci> add replicat javaue, exttrail dirdat/tc
+--   ggsci> info javaue
+
+-- the source-def's must match the trail data
+SourceDefs dirdef/tc.def
+
+-- The JVM must be found in the library path before starting manager/extract:
+-- Windows: add to the PATH the location of jvm.dll (not java.exe), e.g., %JAVA_HOME%\jre\bin\server
+-- Unix/Linux: add to LD_LIBRARY_PATH (or LIBPATH, etc) the location of libjvm.so and any supporting
+-- libraries which may be in a separate directory (e.g., libnet, libjsig)
+--    $ export LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/amd64/server:$LD_LIBRARY_PATH
+
+-- Print current environmental variable settings to the report file
+getEnv (JAVA_HOME)
+getEnv (LD_LIBRARY_PATH)
+getEnv (PATH)
+
+-- windows:
+-- TARGETDB LIBFILE ggjava.dll SET property=dirprm/javaue.properties
+-- unix/linux:
+TARGETDB LIBFILE libggjava.so SET property=dirprm/javaue.properties 
+
+-- tables to be processed; as of 11.2 data may be filtered, tables/operations skipped
+MAP GG.*, TARGET GG.*;
+MAP PETSTORE.*, TARGET PETSTORE.*;
+MAP DBO.*, TARGET DBO.*;
+

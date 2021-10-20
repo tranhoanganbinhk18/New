@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   s c a - d e f a u l t . x m l                               -|
+   !-                                                               -|
+   !-   Logging control file for OGG Microservices                  -|
+   \- ============================================================= -/
+  ! -->
+
+  <appender  name="sca-default.log"  class="RollingFileAppender">
+    <level  value="info"/>
+    <param   name="File"             value="%A.log"/>
+    <param   name="MaxFileSize"      value="10MB"/>
+    <param   name="MaxBackupIndex"   value="9"/>
+    <param   name="BufferedIO"       value="false"/>
+    <param   name="Append"           value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"          value="%d{%Y-%m-%dT%H:%M:%S%z} %-5p| %m (%t)%n"/>
+    </layout>
+  </appender>
+
+  <!--
+   !-   A p p l i c a t i o n s
+  ! -->
+  <logger          name="ServiceManager">
+    <appender-ref  name="sca-default.log"/>
+  </logger>
+  <logger          name="adminsrvr">
+    <appender-ref  name="sca-default.log"/>
+  </logger>
+  <logger          name="distsrvr">
+    <appender-ref  name="sca-default.log"/>
+  </logger>
+  <logger          name="recvsrvr">
+    <appender-ref  name="sca-default.log"/>
+  </logger>
+  <logger          name="pmsrvr">
+    <appender-ref  name="sca-default.log"/>
+  </logger>
+
+  <!--
+   !-   M i c r o s e r v i c e s   A r c h i t e c t u r e
+  ! -->
+  <logger          name="sca">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="info"/>
+  </logger>
+  <logger          name="TaskManager.Tasks">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="info"/>
+  </logger>
+
+  <!--
+   !-   M e s s a g e s
+  ! -->
+  <logger          name="ggserr.log" additivity="false">
+    <appender-ref  name="sca-default.log"/>
+    <level        value="info"/>
+  </logger>
+
+</configuration>

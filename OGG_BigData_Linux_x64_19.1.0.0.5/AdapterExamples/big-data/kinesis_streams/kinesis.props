@@ -1,0 +1,32 @@
+
+gg.handlerlist=kinesis
+gg.handler.kinesis.type=kinesis_streams
+gg.handler.kinesis.mode=op
+gg.handler.kinesis.format=json
+gg.handler.kinesis.region=us-west-2
+#The following resolves the Kinesis stream name as the short table name
+gg.handler.kinesis.streamMappingTemplate=${tableName}
+#The following resolves the Kinesis partition key as the concatenated primary keys
+gg.handler.kinesis.partitionMappingTemplate=${primaryKeys}
+gg.handler.kinesis.deferFlushAtTxCommit=false
+gg.handler.kinesis.deferFlushOpCount=1000
+gg.handler.kinesis.formatPerOp=true
+gg.handler.kinesis.proxyServer=www-proxy-hqdc.us.oracle.com
+gg.handler.kinesis.proxyPort=80
+
+goldengate.userexit.writers=javawriter
+javawriter.stats.display=TRUE
+javawriter.stats.full=TRUE
+
+gg.log=log4j
+gg.log.level=INFO
+
+gg.report.time=30sec
+
+gg.classpath=/aws_sdk_path/aws-java-sdk-1.11.107/lib/*:/aws_sdk_path/aws-java-sdk-1.11.107/third-party/lib/*
+
+##Configured with access id and secret key configured elsewhere
+javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar 
+
+##Configured with access id and secret key configured here
+#javawriter.bootoptions=-Xmx512m -Xms32m -Djava.class.path=ggjava/ggjava.jar -Daws.accessKeyId=your_access_key -Daws.secretKey=your_secret_key 

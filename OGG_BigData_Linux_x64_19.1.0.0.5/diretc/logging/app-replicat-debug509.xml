@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<configuration>
+
+  <!--
+   /- ============================================================= -\
+   !-   a p p - r e p l i c a t - d e b u g 5 0 9 . x m l           -|
+   !-                                                               -|
+   !-   Details from incompatible record error message              -|
+   !- ============================================================= -|
+  ! -->
+
+  <appender  name="debug509.txt"     class="RollingFileAppender">
+    <level  value="info"/>
+    <param   name="File"             value="%Ddebug509/debug509-%I.txt"/>
+    <param   name="MaxFileSize"      value="10MB"/>
+    <param   name="MaxBackupIndex"   value="9"/>
+    <param   name="BufferedIO"       value="true"/>
+    <param   name="Append"           value="true"/>
+    <layout class="PatternLayout">
+      <param name="Pattern"          value="%d{%Y-%m-%d %H:%M:%S} | %m%n"/>
+    </layout>
+  </appender>
+
+  <logger          name="debug509" additivity="false">
+    <appender-ref  name="debug509.txt"/>
+  </logger>
+
+</configuration>

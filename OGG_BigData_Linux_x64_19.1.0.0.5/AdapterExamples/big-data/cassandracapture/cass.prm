@@ -1,0 +1,24 @@
+-- Command to add extract
+-- ggsci> add extract cass, tranlog
+-- ggsci> add exttrail dirdat/z1, extract cass
+
+extract cass
+-- To capture from Apache Cassandra 3.11 or 3.10 or 3.9
+tranlogoptions cdcreadersdkversion 3.11
+tranlogoptions cdclogdirtemplate /path/to/apache-cassandra-3.11.0/data/cdc_raw
+tranlogoptions sftp user <user> password <password>
+sourcedb 127.0.0.1 userid cassandra password cassandra
+vam libggbigdata_vam.so
+exttrail dirdat/z1
+table source.*;
+
+-- To capture from Apache Cassandra 3.9
+-- tranlogoptions cdcreadersdkversion 3.9
+-- tranlogoptions cdclogdirtemplate /path/to/apache-cassandra-3.9/data/cdc_raw
+-- tranlogoptions sftp user <user> password <password>
+-- sourcedb 127.0.0.1 userid cassandra password cassandra
+-- tranlogoptions ignoremetadatafromvam
+-- vam libggbigdata_vam.so
+-- exttrail dirdat/z1
+-- table source.*;
+
